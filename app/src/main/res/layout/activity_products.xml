@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProductsActivity"
+    android:orientation="vertical"
+    android:background="@color/colorBackground">
+
+    <include
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/colorWhite">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <TextView
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category: "
+                android:textSize="15sp"
+                android:layout_gravity="center"
+                android:padding="15dp"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <Spinner
+                android:gravity="center"
+                android:id="@+id/spinner_category"
+                android:layout_width="0dp"
+                android:paddingLeft="15dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                style="@style/Widget.AppCompat.Spinner"
+                android:layout_gravity="center"
+                android:dropDownWidth="200dp"
+                android:dropDownVerticalOffset="?attr/dropdownListPreferredItemHeight"
+                android:popupBackground="@android:color/white"
+                android:popupElevation="3dp"
+                android:background="@drawable/spinner_bg">
+            </Spinner>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <RelativeLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/btn_sort_up"
+                    android:layout_width="@dimen/dip_18"
+                    android:layout_height="@dimen/dip_18"
+                    android:src="@drawable/ic_sort_up"
+                    android:layout_centerInParent="true"
+                    android:tint="@color/colorPrimary"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <GridView
+        android:numColumns="2"
+        android:id="@+id/product_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </GridView>
+</LinearLayout>
